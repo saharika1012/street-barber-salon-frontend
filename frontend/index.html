@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Barber Salon Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav><span class="brand">✂ Street Barber</span><a href="#services">Services</a><a href="#booking">Book Appointment</a><a href="#appointments">Appointments</a></nav>
+    <div class="hero-content">
+      <p class="eyebrow">YOUR STYLE. YOUR STORY.</p>
+      <h1>Look sharp.<br><span>Feel confident.</span></h1>
+      <p>Professional grooming and salon services at affordable prices.</p>
+      <a class="button" href="#booking">Book an Appointment</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section">
+      <div class="section-heading"><p class="eyebrow">WHAT WE OFFER</p><h2>Our Salon Services</h2><p>Professional care at affordable prices</p></div>
+      <div id="servicesGrid" class="services-grid"></div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="section-heading"><p class="eyebrow">RESERVE YOUR SLOT</p><h2>Book an Appointment</h2><p>Choose your service and preferred time</p></div>
+      <form id="bookingForm" class="booking-card">
+        <label for="customerName">Customer Name</label>
+        <input id="customerName" name="customerName" required maxlength="80" placeholder="Enter your full name">
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" required inputmode="tel" pattern="[0-9+() -]{7,20}" placeholder="Enter phone number">
+        <label for="serviceId">Select Service</label>
+        <select id="serviceId" name="serviceId" required><option value="">Choose a service</option></select>
+        <label for="date">Appointment Date</label>
+        <input id="date" name="date" type="date" required>
+        <label for="time">Appointment Time</label>
+        <input id="time" name="time" type="time" required>
+        <button class="button full" type="submit">Confirm Booking</button>
+        <p id="formMessage" class="message" role="status"></p>
+      </form>
+    </section>
+
+    <section id="appointments" class="section">
+      <div class="section-heading"><p class="eyebrow">SALON DASHBOARD</p><h2>Appointment Management</h2><p>Review and manage customer bookings</p></div>
+      <div class="stats">
+        <div class="stat"><span id="totalAppointments">0</span><small>Total Appointments</small></div>
+        <div class="stat"><span id="totalValue">₹0</span><small>Booked Service Value</small></div>
+      </div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Customer</th><th>Phone</th><th>Service</th><th>Date</th><th>Time</th><th>Price</th><th>Action</th></tr></thead>
+        <tbody id="appointmentsBody"><tr><td colspan="7" class="empty">No appointments yet. Add your first booking above.</td></tr></tbody></table>
+      </div>
+      <p id="dashboardMessage" class="message" role="status"></p>
+    </section>
+  </main>
+  <footer><p>© 2026 Street Barber Salon Management System · Student Project</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
